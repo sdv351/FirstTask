@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main_label">Комунальне підприємство</string>
+    <string name="create_date">Створено</string>
+    <string name="register_date">Зареєстровано</string>
+    <string name="done_for_date">Вирішити до</string>
+    <string name="responsible">Відповідальний</string>
+    <string name="responsible_name">Дніпропетровск</string>
+    <string name="status">В роботі</string>
+    <string name="description">Місце для коментяря</string>
+</resources>

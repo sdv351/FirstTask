@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">First app</string>
+    <string name="main_label">Municipal Enterprise</string>
+    <string name="create_date">Create</string>
+    <string name="register_date">Registered</string>
+    <string name="done_for_date">Finish date</string>
+    <string name="responsible">Responsible</string>
+    <string name="responsible_name">Dnepropetrovsk</string>
+    <string name="status">In progress</string>
+    <string name="description">Place for description </string>
+    <string name="picture1">file:///android_asset/1.jpg </string>
+    <array name="picture">
+        <item>file:///android_asset/1.jpg</item>
+        <item>file:///android_asset/2.jpg</item>
+        <item>file:///android_asset/3.jpg</item>
+        <item>file:///android_asset/4.jpg</item>
+    </array>
+</resources>
