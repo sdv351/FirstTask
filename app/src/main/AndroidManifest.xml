@@ -8,6 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!-- [Comment] supportsRtl="true"  isn’t required and not supported in layouts. -->
         <activity
             android:name=".MainActivity"
             android:label="@string/main_label">

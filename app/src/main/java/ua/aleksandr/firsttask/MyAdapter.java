@@ -31,13 +31,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
+//[Comment] Raw 37: Private field should be named according to Google Code Style
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private Activity activity;
     private String[] mDataset;
 
     public MyAdapter(Activity activity, String[] myDataset) {
-        this.activity = activity;
+        this.activity = activity; //[Comment] It is bad practice to pass activity in adapter just to get context.
         mDataset = myDataset;
     }
 
