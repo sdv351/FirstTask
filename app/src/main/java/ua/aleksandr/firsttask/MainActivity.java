@@ -33,11 +33,21 @@ import android.text.format.DateUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Calendar;
+//[Comment] Portrait orientation should be set in manifest
+//UI:
+//          Color scheme differs too much
+//        RecyclerView is too high. Should match image height.
+//        Images should be square and have same size.
+//        Only two images should be seen on screen and should be seen completely.\
+//        No “Up” arrow on toolbar.
+//        Wrong title on toolbar
+//        TextView with subtitle is missing.
+//        Different screen sizes are being supported poorly. Image is too big on small screens.
+//        values/styles.xml: textSizes are hardcoded, should be in dimens.
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -71,14 +81,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private RecyclerView mRecyclerView;
     private MyAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    //[Comment] Raws 69-79: should be converted to local
+    //[Comment] Raw 142: method is used only in this activity, so should be private
+    //[Comment] “When user presses any control, show toast with control name” - that means taps on ImageViews and all the TextViews should show toasts.
+    //[Comment] There should be no DatePicker logic
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ActionBar actionBar = getSupportActionBar();
-        if (actionBar!=null){
-        actionBar.setDisplayHomeAsUpEnabled(true);}
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
         finder();
         setListener();
         setStartData();
