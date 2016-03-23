@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">First app</string>
-    <string name="main_label">Municipal Enterprise</string>
+    <string name="app_name">CE-1257218</string>
+    <string name="topic">Municipal Enterprise</string>
     <string name="create_date">Create</string>
     <string name="register_date">Registered</string>
     <string name="done_for_date">Finish date</string>

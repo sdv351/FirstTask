@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="main_label">Комунальне підприємство</string>
+    <string name="topic">Комунальне підприємство</string>
     <string name="create_date">Створено</string>
     <string name="register_date">Зареєстровано</string>
     <string name="done_for_date">Вирішити до</string>

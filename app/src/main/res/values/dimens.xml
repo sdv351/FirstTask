@@ -6,4 +6,9 @@
     <dimen name="vertical_padding">16dp</dimen>
     <dimen name="horizontal_padding2">8dp</dimen>
     <dimen name="vertical_padding2">8dp</dimen>
+    <dimen name="text_size_topic">1sp</dimen>
+    <dimen name="layout_height">200dp</dimen>
+    <dimen name="text_size1">16sp</dimen>
+    <dimen name="text_size2">14sp</dimen>
+    <dimen name="divider_height">2dp</dimen>
 </resources>

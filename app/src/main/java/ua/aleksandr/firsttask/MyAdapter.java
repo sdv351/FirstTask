@@ -29,15 +29,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-    private Activity activity;
+    public Activity mActivity;
     private String[] mDataset;
 
     public MyAdapter(Activity activity, String[] myDataset) {
-        this.activity = activity;
+        this.mActivity = activity;//What should I do to avoid pass activity just to get context? I can use another library but what to do with this one
         mDataset = myDataset;
     }
 
@@ -52,10 +53,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        Picasso.with(activity)
+        Picasso.with(mActivity)
                 .load(mDataset[position])
                 .error(R.drawable.back)
                 .into(holder.mImageView);
+
+        holder.mImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mActivity, "imageView", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -66,9 +74,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView mImageView;
 
-        public ViewHolder(View v) {
+                public ViewHolder(View v) {
             super(v);
             mImageView = (ImageView) v.findViewById(R.id.imageView);
+
+
         }
     }
 }

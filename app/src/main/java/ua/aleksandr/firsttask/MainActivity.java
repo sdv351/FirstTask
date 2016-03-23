@@ -24,14 +24,16 @@
 package ua.aleksandr.firsttask;
 
 import android.app.DatePickerDialog;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.format.DateUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,7 +41,8 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView text_view_create, text_view_registration, text_view_done_for, text_view_responsible, text_view_description;
+    private TextView text_view_create, text_view_registration, text_view_done_for, text_view_responsible;
+    private TextView text_view_description, text_topic, text_progress;
     private Calendar dateAndTime = Calendar.getInstance();
     DatePickerDialog.OnDateSetListener data_create = new DatePickerDialog.OnDateSetListener() {
         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
@@ -73,7 +76,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar!=null){
+        actionBar.setDisplayHomeAsUpEnabled(true);}
         finder();
         setListener();
         setStartData();
@@ -103,6 +108,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         text_view_responsible = (TextView) findViewById(R.id.text_view_responsibility_date);
         text_view_description = (TextView) findViewById(R.id.text_view_description_data);
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        text_topic = (TextView) findViewById(R.id.text_topic);
+        text_progress = (TextView) findViewById(R.id.text_progress);
     }
 
     private void setListener() {
@@ -111,6 +118,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         text_view_done_for.setOnClickListener(this);
         text_view_responsible.setOnClickListener(this);
         text_view_description.setOnClickListener(this);
+        text_topic.setOnClickListener(this);
+        text_progress.setOnClickListener(this);
     }
 
     @Override
@@ -127,6 +136,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.text_view_responsibility_date:
+            case R.id.text_topic:
+            case R.id.text_progress:
             case R.id.text_view_description_data: {
                 Toast.makeText(this, "textView", Toast.LENGTH_SHORT).show();
                 break;
@@ -139,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    public void setDate(View v, DatePickerDialog.OnDateSetListener onDateSetListener) {
+    private void setDate(View v, DatePickerDialog.OnDateSetListener onDateSetListener) {
         new DatePickerDialog(MainActivity.this, onDateSetListener,
                 dateAndTime.get(Calendar.YEAR),
                 dateAndTime.get(Calendar.MONTH),
@@ -152,6 +163,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 dateAndTime.getTimeInMillis(),
                 DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR
         ));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                super.onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }
