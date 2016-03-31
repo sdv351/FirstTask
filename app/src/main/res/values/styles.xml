@@ -9,19 +9,19 @@
     </style>
 
     <style name="gray_text">
-        <item name="android:textColor">@color/text_color1</item>
+        <item name="android:textColor">@color/text_color_secondary</item>
         <item name="android:textSize">@dimen/text_size1</item>
         <item name="android:layout_alignParentLeft">true</item>
     </style>
 
     <style name="black_right_text">
-        <item name="android:textColor">@color/text_color2</item>
+        <item name="android:textColor">@color/text_color_main</item>
         <item name="android:textSize">@dimen/text_size1</item>
         <item name="android:layout_alignParentRight">true</item>
     </style>
 
     <style name="black_text">
-        <item name="android:textColor">@color/text_color2</item>
+        <item name="android:textColor">@color/text_color_main</item>
         <item name="android:textSize">@dimen/text_size1</item>
     </style>
 

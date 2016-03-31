@@ -127,24 +127,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.text_view_registration_date: {
                 setDate(text_view_registration, data_registered);
-                Toast.makeText(this, "textView", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, v.getClass().getSimpleName(), Toast.LENGTH_SHORT).show();
                 break;
             }
             case R.id.text_view_done_for_data: {
                 setDate(text_view_done_for, data_done_for);
-                Toast.makeText(this, "textView", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,v.getClass().getSimpleName(), Toast.LENGTH_SHORT).show();
                 break;
             }
             case R.id.text_view_responsibility_date:
             case R.id.text_topic:
             case R.id.text_progress:
             case R.id.text_view_description_data: {
-                Toast.makeText(this, "textView", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,v.getClass().getSimpleName(), Toast.LENGTH_SHORT).show();
                 break;
             }
             case R.id.text_view_create_date: {
                 setDate(text_view_create, data_create);
-                Toast.makeText(this, "textView", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, v.getClass().getSimpleName(), Toast.LENGTH_SHORT).show();
                 break;
             }
         }

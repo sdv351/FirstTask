@@ -38,7 +38,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private String[] mDataset;
 
     public MyAdapter(Activity activity, String[] myDataset) {
-        this.mActivity = activity;//What should I do to avoid pass activity just to get context? I can use another library but what to do with this one
+        this.mActivity = activity;
         mDataset = myDataset;
     }
 
@@ -61,7 +61,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.mImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mActivity, "imageView", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mActivity, v.getClass().getSimpleName(), Toast.LENGTH_SHORT).show();
             }
         });
     }
